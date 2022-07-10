@@ -3,14 +3,14 @@ import { navbarItems } from "./Navbar.config";
 import logo from "../../assets/svg/logoBlue.svg";
 import "./Navbar.style.scss";
 
-function HamburgerMenu(props: any) {
-  const { setMenuOpen, menuOpen } = props;
-  function handleHamburgerClick() {
-    setMenuOpen(!menuOpen);
-  }
+interface HamburgerMenuInterface {
+  menuOpen: boolean;
+  setMenuOpen: (menuOpen: boolean) => void;
+}
 
+function HamburgerMenu({ menuOpen, setMenuOpen }: HamburgerMenuInterface) {
   return (
-    <button className="hamburger" onClick={handleHamburgerClick}>
+    <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
       <span className={menuOpen ? "bar active" : "bar"}></span>
       <span className={menuOpen ? "bar active" : "bar"}></span>
       <span className={menuOpen ? "bar active" : "bar"}></span>

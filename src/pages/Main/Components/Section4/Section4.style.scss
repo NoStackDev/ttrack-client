@@ -1,0 +1,12 @@
+.section4 {
+  padding: 1rem;
+  text-align: center;
+
+  h2 {
+    color: hsl(300, 3%, 8%);
+
+    & > span {
+      color: hsl(220, 86%, 40%);
+    }
+  }
+}

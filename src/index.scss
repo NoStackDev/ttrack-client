@@ -1,20 +1,5 @@
-// $font1: Montserrat;
-// $font2: Poppins;
-// $font3: Roboto;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-
-$breakpoints-up: (
-  "medium": 700px,
-  "large": 900px,
-  "xlarge": 1440px,
-);
-
-@mixin breakpoint($size) {
-  @media (min-width: map-get($breakpoints-up, $size)) {
-    @content;
-  }
-}
 
 :root {
   --font-1: Montserrat;
@@ -46,28 +31,28 @@ li {
   list-style: none;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-h1 {
-  font-size: 3rem;
-  line-height: 3.8rem;
-}
-
 h2 {
-  font-size: 2rem;
+  font-family: var(--font-1);
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.875rem;
 }
 
 h3 {
+  font-family: var(--font-1);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.875rem;
+}
+
+h4 {
   font-size: 1.5rem;
+  font-family: var(--font-1);
+  line-height: 1.875;
 }
 
 body {
   font-family: var(--font-2);
   color: var(--font-color-primary);
-  background-color: hsl(0, 0%, 90%);
+  letter-spacing: 0.1rem;
 }
