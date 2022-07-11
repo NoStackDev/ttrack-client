@@ -36,9 +36,9 @@ export default function Section2() {
           <span>
             If enterprises have learned anything from years of managing
             projects, it’s that most of the time spent project planning goes to
-            waste. But it doesn’t have to be this wayTtrack has moved forward to
-            get you accurate AI predictions of when projects can be completed,
-            capturing constraints like cost, scope, and schedule.
+            waste. But it doesn’t have to be this way Ttrack has moved forward
+            to get you accurate AI predictions of when projects can be
+            completed, capturing constraints like cost, scope, and schedule.
           </span>
           <button>Discover More</button>
         </div>

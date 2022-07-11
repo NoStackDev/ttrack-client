@@ -12,12 +12,12 @@ const Section3 = (props: Props) => {
       <h2>
         What Ttrack <span>Offers</span>
       </h2>
-      <span>
+      <p>
         Ttrack is dedicated to the planning, scheduling, tracking and
         collaboration of team to help individual, organization, businesses
         organized while planning and running projects, in a way that is
         accurate, predictable and profitable.
-      </span>
+      </p>
       <div className="track-offers">
         <div className="track-offer">
           <h4>Task Tracking</h4>

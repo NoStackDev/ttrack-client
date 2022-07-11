@@ -14,8 +14,9 @@
     margin-block: 1rem;
   }
 
-  & > span {
+  & > p {
     line-height: 2rem;
+    text-align: justify;
   }
 
   .track-offers {
@@ -35,6 +36,7 @@
       p {
         margin-top: 0.5rem;
         line-height: 1.5;
+        text-align: justify;
       }
     }
   }

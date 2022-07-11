@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
+import OurAdvantages from "../../components/OurAdvantages";
 import Section1 from "./Components/Section1";
 import Section2 from "./Components/Section2";
 import Section3 from "./Components/Section3";
@@ -15,6 +16,7 @@ export default function Main() {
       <Section3 />
       <Section4 />
       <Testimonials />
+      <OurAdvantages />
     </main>
   );
 }
