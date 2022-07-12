@@ -6,9 +6,13 @@ type advantageType = {
   body: string;
 };
 
-const OurAdvantagesCard: FC<{ advantage: advantageType }> = ({ advantage }) => {
+const OurAdvantagesCard: FC<{
+  advantage: advantageType;
+  image: string;
+}> = ({ advantage, image }) => {
   return (
     <div className="advantage-card">
+      <img src={image} alt="" />
       <span>{advantage.title}</span>
       <p>{advantage.body}</p>
     </div>

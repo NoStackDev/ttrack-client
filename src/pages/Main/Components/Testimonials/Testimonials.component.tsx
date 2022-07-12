@@ -1,102 +1,89 @@
-import React, { useState, Dispatch } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import Testimonial from "./components/Testimonial";
 import testimonies from "./Testimonials.config";
 import arrowSvg from "../../../../assets/svg/arrow.svg";
 import "./Testimonials.style.scss";
 
-type TestimonialIndicatorType = {
-  active: number;
-  setActiveTestimonyIndex: Dispatch<number>;
-};
-
-const TestimonialIndicator = ({
-  active,
-  setActiveTestimonyIndex,
-}: TestimonialIndicatorType) => {
-  return (
-    <div className="indicators">
-      {testimonies.map((testimony, index) => {
-        return (
-          <span
-            className={`indicator ${active === index ? "active" : ""} `}
-            onClick={() => setActiveTestimonyIndex(index)}
-          ></span>
-        );
-      })}
-    </div>
-  );
-};
-
 const Testimonials = () => {
-  const [activeTestimonyIndex, setActiveTestimonyIndex] = useState<number>(0);
-  const [prevActive, setPrevActive] = useState<number>(testimonies.length - 1);
-  const [slideInFrom, setSlideInFrom] = useState<string>("right");
-  const [slideOutFrom, setSlideOutFrom] = useState<string>("left");
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [activeFrameIndex, setActiveFrameIndex] = useState<number>(0);
 
-  function handleArrowClick(action: string): void {
+  useLayoutEffect(() => {
+    if (null !== sliderRef.current) {
+      sliderRef.current.style.transform = `translateX(-${
+        activeFrameIndex * 100
+      }vw)`;
+    }
+  });
+
+  function handleControlClick(action: string) {
     switch (action) {
-      case "+":
-        if (activeTestimonyIndex >= testimonies.length - 1) {
-          setPrevActive(activeTestimonyIndex);
-          setActiveTestimonyIndex(0);
+      case "-":
+        if (testimonies.indexOf(testimonies[activeFrameIndex]) <= 0) {
+          setActiveFrameIndex(testimonies.length - 1);
         } else {
-          setPrevActive(activeTestimonyIndex);
-          setActiveTestimonyIndex(activeTestimonyIndex + 1);
+          setActiveFrameIndex(activeFrameIndex - 1);
         }
-        setSlideOutFrom("left");
-        setSlideInFrom("right");
         break;
 
-      case "-":
-        if (activeTestimonyIndex <= 0) {
-          setPrevActive(activeTestimonyIndex);
-          setActiveTestimonyIndex(testimonies.length - 1);
+      case "+":
+        if (
+          testimonies.indexOf(testimonies[activeFrameIndex]) >=
+          testimonies.length - 1
+        ) {
+          setActiveFrameIndex(0);
         } else {
-          setPrevActive(activeTestimonyIndex);
-          setActiveTestimonyIndex(activeTestimonyIndex - 1);
+          setActiveFrameIndex(activeFrameIndex + 1);
         }
-        setSlideOutFrom("right");
-        setSlideInFrom("left");
         break;
-      default:
-        return;
     }
   }
 
   return (
-    <div className="testimonials-container">
-      <div className="testimonials">
-        {testimonies.map((testimony) => {
+    <section id="testimonials">
+      <h2>
+        <span>What our clients say</span> about Ttrack
+      </h2>
+
+      <p>
+        We are really fortunate to have developed strong relationships with many
+        of our customers. And we've developed genuine friendships with them in
+        addition to our job connections. Here are their comments regarding us.
+      </p>
+
+      <div className="slide-container">
+        <div className="slider" ref={sliderRef}>
+          {testimonies.map((testimony) => {
+            return <Testimonial testimony={testimony} />;
+          })}
+        </div>
+      </div>
+      <div className="slide-control">
+        <img
+          src={arrowSvg}
+          alt="previous slide frame"
+          onClick={() => handleControlClick("-")}
+        />
+        <img
+          src={arrowSvg}
+          alt="next slide frame"
+          onClick={() => handleControlClick("+")}
+        />
+      </div>
+      <div className="slide-indicator">
+        {testimonies.map((testimony, index) => {
           return (
-            <Testimonial
-              testimony={testimony}
-              active={testimonies[activeTestimonyIndex].name}
-              prevActive={testimonies[prevActive].name}
-              slideInFrom={slideInFrom}
-              slideOutFrom={slideOutFrom}
+            <input
+              type="radio"
+              name="slide frame"
+              id={"frame" + index.toString()}
+              checked={index === activeFrameIndex}
+              onChange={() => setActiveFrameIndex(index)}
             />
           );
         })}
       </div>
-      <div className="indicators-container">
-        <div className="arrows">
-          <img
-            src={arrowSvg}
-            alt="move testimonial carousel left"
-            onClick={() => handleArrowClick("-")}
-          />
-          <img
-            src={arrowSvg}
-            alt="move testimonial carousel right"
-            onClick={() => handleArrowClick("+")}
-          />
-        </div>
-        <TestimonialIndicator
-          active={activeTestimonyIndex}
-          setActiveTestimonyIndex={setActiveTestimonyIndex}
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 

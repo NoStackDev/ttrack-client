@@ -7,14 +7,12 @@
   text-align: left;
   gap: 1.5rem;
   background-color: hsl(40, 16%, 96%);
-  // border-radius: 0.5rem;
 
   .bias {
     align-self: flex-end;
     background: hsla(50, 96%, 51%, 1);
     padding: 0.625rem 1.875rem;
     font-weight: 700;
-    // border-radius: 0.5rem;
     color: hsl(0, 0%, 100%);
   }
 
@@ -49,7 +47,6 @@
     color: hsl(0, 0%, 100%);
     padding: 0.8rem 1.275rem;
     border: none;
-    // border-radius: 0.5rem;
     font-weight: 700;
     cursor: pointer;
     align-self: center;

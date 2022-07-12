@@ -1,34 +1,22 @@
-import React, { FC } from "react";
+import React from "react";
 import "./Testimonial.style.scss";
 
-type testimonyProps = {
-  name: string;
-  jobDesc: string;
-  body: string;
-  picture: string;
+type Props = {
+  testimony: {
+    img: string;
+    name: string;
+    body: string;
+    jobDesc: string;
+  };
 };
 
-const Testimonial: FC<{
-  testimony: testimonyProps;
-  active: string | null;
-  prevActive: string;
-  slideInFrom: string;
-  slideOutFrom: string;
-}> = ({ testimony, active, prevActive, slideInFrom, slideOutFrom }) => {
+const Testimonial = ({ testimony }: Props) => {
   return (
-    <div
-      className={`testimony-card ${active === testimony.name ? "active" : ""} ${
-        active === testimony.name ? "slide-in-from-" + slideInFrom : ""
-      }  ${prevActive === testimony.name ? "prev-active" : ""} ${
-        prevActive === testimony.name ? "slide-out-from-" + slideOutFrom : ""
-      }`}
-    >
-      <img src={testimony.picture} alt={testimony.name} />
-      <div>
-        <p>{testimony.body}</p>
-        <span>{testimony.name}</span>
-        <span>{testimony.jobDesc}</span>
-      </div>
+    <div className="testimony-card">
+      <img src={testimony.img} alt="" />
+      <p>{testimony.body}</p>
+      <p>{testimony.name}</p>
+      <p>{testimony.jobDesc}</p>
     </div>
   );
 };

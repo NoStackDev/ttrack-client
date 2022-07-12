@@ -1,3 +1,20 @@
-.our-advantages-container {
+#our-advantages {
   margin-top: 2rem;
+  padding-inline: 1rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  color: hsl(0, 1%, 15%);
+
+  & > div:nth-of-type(1) > h2 > span {
+    color: hsla(220, 68%, 32%, 1);
+  }
+
+  & > div:nth-of-type(1) p {
+    margin-top: 1rem;
+    text-align: justify;
+  }
 }

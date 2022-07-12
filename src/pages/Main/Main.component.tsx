@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import OurAdvantages from "../../components/OurAdvantages";
+import CTA from "./Components/CTA";
 import Section1 from "./Components/Section1";
 import Section2 from "./Components/Section2";
 import Section3 from "./Components/Section3";
@@ -17,6 +18,7 @@ export default function Main() {
       <Section4 />
       <Testimonials />
       <OurAdvantages />
+      <CTA />
     </main>
   );
 }
