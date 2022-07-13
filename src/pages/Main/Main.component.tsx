@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import OurAdvantages from "../../components/OurAdvantages";
 import CTA from "./Components/CTA";
@@ -19,6 +20,7 @@ export default function Main() {
       <Testimonials />
       <OurAdvantages />
       <CTA />
+      <Footer />
     </main>
   );
 }
