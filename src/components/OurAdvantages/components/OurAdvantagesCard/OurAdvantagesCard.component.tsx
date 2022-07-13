@@ -13,8 +13,10 @@ const OurAdvantagesCard: FC<{
   return (
     <div className="advantage-card">
       <img src={image} alt="" />
-      <span>{advantage.title}</span>
-      <p>{advantage.body}</p>
+      <div>
+        <span>{advantage.title}</span>
+        <p>{advantage.body}</p>
+      </div>
     </div>
   );
 };

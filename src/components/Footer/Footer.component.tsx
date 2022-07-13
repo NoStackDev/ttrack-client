@@ -18,8 +18,7 @@ const Footer: FC = (props: Props) => {
         <img src={logoImg} alt="" />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut risus,
-          habitasse luctus varius et in at nullam justo. In scelerisque aenean
-          mattis consequat sed massa. In turpis malesuada id semper est.
+          habitasse luctus varius et in at nullam justo.
         </p>
         <div className="socials">
           <a href="/">
@@ -82,9 +81,9 @@ const Footer: FC = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="copyright">
+      {/* <div className="copyright">
         Copyright 2022 All right reserve Ttrack.com
-      </div>
+      </div> */}
     </section>
   );
 };

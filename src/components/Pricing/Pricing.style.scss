@@ -1,4 +1,9 @@
 .pricing-plans {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }

@@ -14,9 +14,11 @@ const Testimonial = ({ testimony }: Props) => {
   return (
     <div className="testimony-card">
       <img src={testimony.img} alt="" />
-      <p>{testimony.body}</p>
-      <p>{testimony.name}</p>
-      <p>{testimony.jobDesc}</p>
+      <div>
+        <p>{testimony.body}</p>
+        <p>{testimony.name}</p>
+        <p>{testimony.jobDesc}</p>
+      </div>
     </div>
   );
 };

@@ -24,11 +24,13 @@ const OurAdvantages = (props: Props) => {
         </p>
       </div>
 
-      {advantages.map((advantage, index) => {
-        return (
-          <OurAdvantagesCard advantage={advantage} image={imagesArr[index]} />
-        );
-      })}
+      <div>
+        {advantages.map((advantage, index) => {
+          return (
+            <OurAdvantagesCard advantage={advantage} image={imagesArr[index]} />
+          );
+        })}
+      </div>
     </section>
   );
 };
