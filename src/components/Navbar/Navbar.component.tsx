@@ -48,9 +48,9 @@ export default function Navbar() {
             Sign In
           </a>
         </li>
-        {navbarItems.map((ele) => {
+        {navbarItems.map((ele, index) => {
           return (
-            <li>
+            <li key={index}>
               <a
                 href="/"
                 className={navLink === ele.item ? "active" : ""}

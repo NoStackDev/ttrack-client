@@ -1,0 +1,23 @@
+#pricing {
+  color: hsl(0, 0%, 13%);
+
+  & > h2 {
+    padding: 1rem;
+    text-align: center;
+
+    span {
+      color: hsla(220, 86%, 40%, 1);
+    }
+  }
+
+  & > p {
+    padding-inline: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  h2:nth-last-of-type(1) {
+    margin-top: 1rem;
+  }
+}

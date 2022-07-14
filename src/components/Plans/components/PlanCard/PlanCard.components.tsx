@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "./PricingCard.style.scss";
+import "./PlanCard.style.scss";
 
 interface planInterface {
   planName: string;
@@ -38,7 +38,7 @@ const RenderFeatures: FC<{ features: string[] }> = ({ features }) => {
   );
 };
 
-const PricingCard: FC<{ plan: planInterface }> = ({ plan }) => {
+const PlanCard: FC<{ plan: planInterface }> = ({ plan }) => {
   return (
     <div className="pricing-card">
       {plan.bias ? <div className="bias">Popular</div> : <></>}
@@ -50,4 +50,4 @@ const PricingCard: FC<{ plan: planInterface }> = ({ plan }) => {
   );
 };
 
-export default PricingCard;
+export default PlanCard;

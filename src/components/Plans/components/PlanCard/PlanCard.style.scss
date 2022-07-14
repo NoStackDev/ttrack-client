@@ -1,11 +1,13 @@
 .pricing-card {
+  position: relative;
   margin-top: 1rem;
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   text-align: left;
-  gap: 1.5rem;
+  gap: 2rem;
   background-color: hsl(40, 16%, 96%);
 
   .bias {
